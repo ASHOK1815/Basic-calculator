@@ -1,6 +1,7 @@
-package com.epam.java_basic;
+package com.epam.java_basic.calculator;
 
 import com.epam.java_basic.calculator.Calculator;
+import org.hamcrest.Matchers;
 import org.junit.Test;
 import org.junit.runner.RunWith;
 import org.junit.runners.JUnit4;
@@ -18,7 +19,7 @@ public class CalculatorTestCase {
         double b = 6.3;
         double result = calculator.add(a, b);
         double expectedResult = 16.4;
-        assertThat(String.format("Wrong result of method add (input is %f and %f)", a, b), result, is(expectedResult));
+        assertThat(String.format("Wrong result of method add (input is %f and %f)", a, b), result, Matchers.is(expectedResult));
     }
 
     @Test
@@ -28,7 +29,7 @@ public class CalculatorTestCase {
         double b =  Double.MAX_VALUE;
         double result = calculator.add(a, b);
         double expectedResult = Double.POSITIVE_INFINITY;
-        assertThat(String.format("Wrong result of method add (input is %f and %f)", a, b), result, is(expectedResult));
+        assertThat(String.format("Wrong result of method add (input is %f and %f)", a, b), result, Matchers.is(expectedResult));
     }
 
     @Test
@@ -38,7 +39,7 @@ public class CalculatorTestCase {
         double b =  Double.MAX_VALUE * -1;
         double result = calculator.add(a, b);
         double expectedResult = Double.NEGATIVE_INFINITY;
-        assertThat(String.format("Wrong result of method add (input is %f and %f)", a, b), result, is(expectedResult));
+        assertThat(String.format("Wrong result of method add (input is %f and %f)", a, b), result, Matchers.is(expectedResult));
     }
 
     @Test
@@ -48,7 +49,7 @@ public class CalculatorTestCase {
         double b = 6.3;
         double result = calculator.subtract(a, b);
         double expectedResult = 3.8;
-        assertThat(String.format("Wrong result of method subtract (input is %f and %f)", a, b), result, is(expectedResult));
+        assertThat(String.format("Wrong result of method subtract (input is %f and %f)", a, b), result, Matchers.is(expectedResult));
     }
 
     @Test
@@ -58,7 +59,7 @@ public class CalculatorTestCase {
         double b =  Double.MAX_VALUE * -1;
         double result = calculator.subtract(Double.MAX_VALUE, Double.MAX_VALUE * -1);
         double expectedResult = Double.POSITIVE_INFINITY;
-        assertThat(String.format("Wrong result of method subtract (input is %f and %f)", a, b), result, is(expectedResult));
+        assertThat(String.format("Wrong result of method subtract (input is %f and %f)", a, b), result, Matchers.is(expectedResult));
     }
 
     @Test
@@ -68,7 +69,7 @@ public class CalculatorTestCase {
         double b =  Double.MAX_VALUE;
         double result = calculator.subtract(a, b);
         double expectedResult = Double.NEGATIVE_INFINITY;
-        assertThat(String.format("Wrong result of method subtract (input is %f and %f)", a, b), result, is(expectedResult));
+        assertThat(String.format("Wrong result of method subtract (input is %f and %f)", a, b), result, Matchers.is(expectedResult));
     }
 
     @Test
@@ -78,7 +79,7 @@ public class CalculatorTestCase {
         double b = 6.3;
         double result = calculator.multiply(a, b);
         double expectedResult = 63.63;
-        assertThat(String.format("Wrong result of method multiply (input is %f and %f)", a, b), result, is(expectedResult));
+        assertThat(String.format("Wrong result of method multiply (input is %f and %f)", a, b), result, Matchers.is(expectedResult));
     }
 
     @Test
@@ -88,7 +89,7 @@ public class CalculatorTestCase {
         double b = 6.3;
         double result = calculator.div(a, b);
         double expectedResult = 1.6;
-        assertThat(String.format("Wrong result of method div (input is %f and %f)", a, b), result, is(expectedResult));
+        assertThat(String.format("Wrong result of method div (input is %f and %f)", a, b), result, Matchers.is(expectedResult));
     }
 
     @Test
@@ -98,7 +99,7 @@ public class CalculatorTestCase {
         double b = 0;
         double result = calculator.div(a, b);
         double expectedResult = Double.POSITIVE_INFINITY;
-        assertThat(String.format("Wrong result of method div (input is %f and %f)", a, b), result, is(expectedResult));
+        assertThat(String.format("Wrong result of method div (input is %f and %f)", a, b), result, Matchers.is(expectedResult));
     }
 
     @Test
@@ -108,7 +109,7 @@ public class CalculatorTestCase {
         double b = 0;
         double result = calculator.div(a, b);
         double expectedResult = Double.NEGATIVE_INFINITY;
-        assertThat(String.format("Wrong result of method div (input is %f and %f)", a, b), result, is(expectedResult));
+        assertThat(String.format("Wrong result of method div (input is %f and %f)", a, b), result, Matchers.is(expectedResult));
     }
 
 }
